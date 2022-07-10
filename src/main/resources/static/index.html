@@ -46,8 +46,55 @@
         </div>
     </div>
 
+    <div class="dark-mode"><button id="icon">Dark-Mode</button></div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
     <script src="/js/main.js"></script>
+
+    <script>
+        var icon = document.getElementById("icon");
+        var root = document.querySelector(":root");
+        var darkmodeFlag=0;
+
+        icon.onclick = function(){
+            console.log("inside button");
+        root.style.setProperty('--colorbottomBgcolor','black');
+        root.style.setProperty('--color-UnameContainerText','white');
+        root.style.setProperty('--color-topBgcolor','teal');
+            
+        root.style.setProperty('--color4', '#c8c8c8');
+        
+        root.style.setProperty('--color-connecting', 'rgb(224, 218, 218)');
+        root.style.setProperty('--color-chatHeader', '#928c8c');
+        root.style.setProperty('--color-chatMsg', '#9ea3ac');
+        root.style.setProperty('--color-chatBgcolor', 'rgb(83, 78, 78)');
+        root.style.setProperty('--color-chatContainer', 'rgb(100, 98, 98)');
+        root.style.setProperty('--color-UnameContainerBgcolor','gray');
+        if(darkmodeFlag){
+            darkmodeFlag = lightmode(darkmodeFlag);
+        } else{darkmodeFlag=1;}
+        
+        }
+
+        function lightmode(darkmodeFlag){
+                        
+            root.style.setProperty('--colorbottomBgcolor','#f4f4f4');
+            root.style.setProperty('--color-UnameContainerText','#333');
+            root.style.setProperty('--color-topBgcolor','#1ebea5');
+                
+            root.style.setProperty('--color4', '#c8c8c8');
+
+            root.style.setProperty('--color-connecting', '#777');
+            root.style.setProperty('--color-chatHeader', '#ececec');
+            root.style.setProperty('--color-chatMsg', '#43464b');
+            root.style.setProperty('--color-chatBgcolor', '#FFF');
+            root.style.setProperty('--color-chatContainer', '#fff');
+            root.style.setProperty('--color-UnameContainerBgcolor','#fff');
+            
+            darkmodeFlag=0;
+            return darkmodeFlag;
+        }
+        </script>
   </body>
 </html>
